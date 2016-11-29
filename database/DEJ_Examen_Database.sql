@@ -67,3 +67,7 @@ insert into plato (nombrePlato,precioPlato) values ('Arroz con pollo', 3200),('C
 -- Datos bebidas
 
 insert into bebida (nombreBebida, precioBebida) values ('Mineral', 700), ('Jugo', 800), ('Malteada', 1000);
+
+-- Insertar Clientes
+
+insert into cliente (rut,dv,clave,nombreCliente,apellidoPaterno,apellidoMaterno,direccionCliente,numeracion,comuna,telefono) values (18464695,'1','$2a$12$kyDfvbc/StUjaCtlcPszVu0axHvIWdw9snI1vV.bVUiw9CxnKfoSS','Lucas','Lizama','Monje','Los Militares',5200,109,654785419);

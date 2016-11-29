@@ -25,7 +25,7 @@
                     <input type="text" id="dv" name="dv" maxlength="1" required> *
                 </div>
                 <div class="form-field">
-                    <label for="clave1">Clave</label>
+                    <label for="clave">Clave</label>
                     <input type="password" name="clave" required> *
                 </div>
                 <div class="form-field">

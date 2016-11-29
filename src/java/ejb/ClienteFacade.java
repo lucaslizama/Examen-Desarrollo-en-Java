@@ -33,6 +33,8 @@ public class ClienteFacade extends AbstractFacade<Cliente> {
     public boolean existeUsuario(int rut) {
         TypedQuery consulta = em.createNamedQuery("Cliente.findByRut", Cliente.class);
         List<Cliente> lista = consulta.setParameter("rut", rut).getResultList();
-        return lista.get(0) != null;
+        if(lista.size() == 1)
+            return true;
+        return false;
     }
 }

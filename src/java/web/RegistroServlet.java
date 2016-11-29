@@ -71,7 +71,7 @@ public class RegistroServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if(request.getSession(false).getAttribute("usuario") == null) {
+        if(request.getSession(false).getAttribute("usuario") != null) {
             response.sendRedirect("/index");
             return;
         }
@@ -101,7 +101,7 @@ public class RegistroServlet extends HttpServlet {
             return;
         }
         
-        if(!validarClaves(request.getParameter("pass1"),request.getParameter("pass2"))){
+        if(!validarClaves(request.getParameter("clave"),request.getParameter("clave2"))){
             forwardError("Las claves no son identicas", request, response);
             return;
         }
@@ -133,7 +133,7 @@ public class RegistroServlet extends HttpServlet {
         cliente.setApellidoMaterno(request.getParameter("apellidoMaterno"));
         cliente.setComuna(cf.find(Integer.parseInt(request.getParameter("comuna"))));
         cliente.setNumeracion(Integer.parseInt(request.getParameter("numeracion")));
-        cliente.setClave(BCrypt.hashpw(request.getParameter("pass1"), BCrypt.gensalt(12)));
+        cliente.setClave(BCrypt.hashpw(request.getParameter("clave"), BCrypt.gensalt(12)));
         cliente.setDireccionCliente(request.getParameter("direccion"));
         cliente.setTelefono(request.getParameter("telefono"));
         return cliente;

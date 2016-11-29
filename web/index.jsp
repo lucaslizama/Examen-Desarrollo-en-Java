@@ -29,8 +29,8 @@
                     <li><a href="/registro">Registrarse</a></li>
                 </c:when>
                 <c:otherwise>
-                    <li><a href="/login" >Generar un Pedido</a></li>
-                    <li><a href="/registro">Ver mis pedidos</a></li>
+                    <li><a href="/generarPedido" >Generar un Pedido</a></li>
+                    <li><a href="/pedidos">Ver mis pedidos</a></li>
                 </c:otherwise>
             </c:choose>            
         </ol>
