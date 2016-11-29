@@ -5,8 +5,9 @@
  */
 package web;
 
+import ejb.ComunaFacade;
 import java.io.IOException;
-import java.io.PrintWriter;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,15 +21,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "RegistroServlet", urlPatterns = {"/registro"})
 public class RegistroServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    @EJB
+    private ComunaFacade cf;
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
@@ -46,10 +41,13 @@ public class RegistroServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if(request.getSession(false).getAttribute("usuario") == null) {
+        if(request.getSession(false).getAttribute("usuario") != null) {
             response.sendRedirect("/index");
             return;
         }
+        
+        request.setAttribute("comunas", cf.findAll());
+        request.getRequestDispatcher("registro.jsp").forward(request, response);
     }
 
     /**
@@ -67,6 +65,8 @@ public class RegistroServlet extends HttpServlet {
             response.sendRedirect("/index");
             return;
         }
+        
+        
     }
 
     /**
