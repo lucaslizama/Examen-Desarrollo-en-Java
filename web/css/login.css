@@ -1,0 +1,33 @@
+fieldset {
+    width: 300px;
+}
+
+label {
+    display: inline-block;
+    width: 50px;
+}
+
+input{
+    display: inline-block;
+    width: 150px;
+}
+
+button {
+    margin-left: 55px;
+}
+
+span > a {
+    display: inline-block;
+    width: 130px;
+    margin-left: 55px;
+}
+
+#dv {
+    width: 20px;
+    text-align: center;
+}
+
+.form-field {
+    margin-top: 5px;
+}
+

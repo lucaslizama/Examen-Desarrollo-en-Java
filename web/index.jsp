@@ -11,10 +11,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="css/index.css"/>
     </head>
     <body>
         <c:if test="${usuario != null}">
-            <!--TODO mensaje bienvenida y link de logout-->
+            <span id="bienvenida-logout">
+                Bienvenido(a) ${usuario.nombreCliente} ${usuario.apellidoPaterno} ${usuario.apellidoMaterno}
+                <a href="/logout">Cerrar Sesión</a>
+            </span>
+            <hr>
         </c:if>
         <h1>"Donde la Abuela" :: Menú</h1>
         <ol>

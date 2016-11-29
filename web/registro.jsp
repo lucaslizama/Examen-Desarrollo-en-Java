@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro</title>
-        <link rel="stylesheet" href="css/index.css"/>
+        <link rel="stylesheet" href="css/registro.css"/>
     </head>
     <body>
         <h1>"Donde la Abuela" :: Registro</h1>
@@ -22,38 +22,35 @@
                     <label for="rut">Rut</label>
                     <input type="number" min="0" name="rut" required>
                     <span>-</span>
-                    <input type="text" id="dv" name="dv" maxlength="1" required>
+                    <input type="text" id="dv" name="dv" maxlength="1" required> *
                 </div>
                 <div class="form-field">
                     <label for="clave1">Clave</label>
-                    <input type="password" name="clave" required>
+                    <input type="password" name="clave" required> *
                 </div>
                 <div class="form-field">
                     <label for="clave2">Confirmar Clave</label>
-                    <input type="password" name="clave2" required>
+                    <input type="password" name="clave2" required> *
                 </div>
                 <div class="form-field">
                     <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" required>
+                    <input type="text" name="nombre" required> *
                 </div>
                 <div class="form-field">
                     <label for="apellidoPaterno">Apellido Paterno</label>
-                    <input type="text" name="apellidoPaterno" required>
+                    <input type="text" name="apellidoPaterno" required> *
                 </div>
                 <div class="form-field">
                     <label for="apellidoMaterno">Apellido Materno</label>
-                    <input type="text" name="apellidoMaterno" required>
+                    <input type="text" name="apellidoMaterno" required> *
                 </div>
                 <div class="form-field">
                     <label for="direccion">Direccion</label>
-                    <input type="text" name="direccion" required>
+                    <input type="text" name="direccion" required> *
                 </div>
                 <div class="form-field">
                     <label for="numeracion">Numeración</label>
-                    <input type="number" name="numeracion" required>
-                </div>
-                <div class="form-field">
-                    
+                    <input type="number" name="numeracion" required> *
                 </div>
                 <div class="form-field">
                     <label for="comuna">Comuna</label>
@@ -62,11 +59,11 @@
                         <c:forEach var="comuna" items="${comunas}">
                             <option value="${comuna.id}">${comuna.nombreComuna}</option>
                         </c:forEach>
-                    </select>
+                    </select> *
                 </div>
                 <div class="form-field">
                     <label for="telefono">Telefono</label>
-                    <input type="text" name="telefono" required>
+                    <input type="text" name="telefono" required> *
                 </div>
                 <div class="form-field">
                     <span><a href="/">Volver</a></span>
@@ -74,5 +71,6 @@
                 </div>
             </form>
         </fieldset>
+        <span style="color:${color}">${mensaje}</span>
     </body>
 </html>
