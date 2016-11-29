@@ -4,6 +4,7 @@
     Author     : lucas
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,21 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <c:if test="${usuario != null}">
+            <!--TODO mensaje bienvenida y link de logout-->
+        </c:if>
+        <h1>"Donde la Abuela" :: Menú</h1>
+        <ol>
+            <c:choose>
+                <c:when test="${usuario == null}">
+                    <li><a href="/login" >Ingresar</a></li>
+                    <li><a href="/registro">Registrarse</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li><a href="/login" >Generar un Pedido</a></li>
+                    <li><a href="/registro">Ver mis pedidos</a></li>
+                </c:otherwise>
+            </c:choose>            
+        </ol>
     </body>
 </html>
