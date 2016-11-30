@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Pedido.findAll", query = "SELECT p FROM Pedido p"),
     @NamedQuery(name = "Pedido.findById", query = "SELECT p FROM Pedido p WHERE p.id = :id"),
+    @NamedQuery(name = "Pedido.findByDespacho", query = "SELECT p FROM Pedido p WHERE p.despacho = :despacho"),
     @NamedQuery(name = "Pedido.findByTotal", query = "SELECT p FROM Pedido p WHERE p.total = :total"),
     @NamedQuery(name = "Pedido.findByFechaHora", query = "SELECT p FROM Pedido p WHERE p.fechaHora = :fechaHora")})
 public class Pedido implements Serializable {
@@ -42,6 +43,10 @@ public class Pedido implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "despacho")
+    private boolean despacho;
     @Basic(optional = false)
     @NotNull
     @Column(name = "total")
@@ -68,8 +73,9 @@ public class Pedido implements Serializable {
         this.id = id;
     }
 
-    public Pedido(Integer id, int total, Date fechaHora) {
+    public Pedido(Integer id, boolean despacho, int total, Date fechaHora) {
         this.id = id;
+        this.despacho = despacho;
         this.total = total;
         this.fechaHora = fechaHora;
     }
@@ -80,6 +86,14 @@ public class Pedido implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public boolean getDespacho() {
+        return despacho;
+    }
+
+    public void setDespacho(boolean despacho) {
+        this.despacho = despacho;
     }
 
     public int getTotal() {
