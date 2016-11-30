@@ -48,6 +48,7 @@ create table pedido (
     cliente int not null,
     plato int not null,
     bebida int not null,
+    despacho boolean not null,
     total int not null,
     fechaHora timestamp not null,
     primary key(id),

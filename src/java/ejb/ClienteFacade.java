@@ -30,6 +30,12 @@ public class ClienteFacade extends AbstractFacade<Cliente> {
         super(Cliente.class);
     }
     
+    public Cliente findByRut(int rut) {
+        TypedQuery consulta = em.createNamedQuery("Cliente.findByRut", Cliente.class);
+        List<Cliente> lista = consulta.setParameter("rut", rut).getResultList();
+        return lista.get(0);
+    }
+    
     public boolean existeUsuario(int rut) {
         TypedQuery consulta = em.createNamedQuery("Cliente.findByRut", Cliente.class);
         List<Cliente> lista = consulta.setParameter("rut", rut).getResultList();

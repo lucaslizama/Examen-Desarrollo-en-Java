@@ -29,6 +29,7 @@
                 </div>
                 <div class="form-field">
                     <button type="submit">Ingresar</button>
+                    <span style="color:${color}">${mensaje}</span>
                 </div>
                 <div class="form-field">
                     <span><a href="/index">Volver</a></span>

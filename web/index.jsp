@@ -17,7 +17,7 @@
         <c:if test="${usuario != null}">
             <span id="bienvenida-logout">
                 Bienvenido(a) ${usuario.nombreCliente} ${usuario.apellidoPaterno} ${usuario.apellidoMaterno}
-                <a href="/logout">Cerrar Sesión</a>
+                | <a href="/logout">Cerrar Sesión</a>
             </span>
             <hr>
         </c:if>
@@ -30,7 +30,7 @@
                 </c:when>
                 <c:otherwise>
                     <li><a href="/generarPedido" >Generar un Pedido</a></li>
-                    <li><a href="/pedidos">Ver mis pedidos</a></li>
+                    <li><a href="/pedidos">Ver Mis Pedidos</a></li>
                 </c:otherwise>
             </c:choose>            
         </ol>
