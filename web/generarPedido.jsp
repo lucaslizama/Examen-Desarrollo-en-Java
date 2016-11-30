@@ -53,8 +53,4 @@
     </body>
 </html>
 
-            <div class="form-field">
-                <label name="domicilio">A Domicilio</label>
-                <input type="checkbox" name="domicilio" value="si" checked> Si
-                <input type="checkbox" name="domicilio" value="no"> No
-            </div>
+            
