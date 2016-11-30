@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="css/confirmarPedido.css"/>
     </head>
     <body>
         <c:if test="${usuario != null}">
@@ -24,29 +25,31 @@
         <fieldset>
             <legend>Confirmar Pedido</legend>
             <div class="form-field">
-                <span>${compra.plato.nombrePlato}</span> <span>&#36;${compra.plato.precioPlato}</span>
+                <span class="c1">${compra.plato.nombrePlato}</span> <span class="c2">&#36;${compra.plato.precioPlato}</span>
             </div>
             <div class="form-field">
-                <span>${compra.bebida.nombreBebida}</span> <span>&#36;${compra.bebida.precioBebida}</span>
+                <span class="c1">${compra.bebida.nombreBebida}</span> <span class="c2">&#36;${compra.bebida.precioBebida}</span>
             </div>
             <div class="form-field">
-                <span>A domicilio</span>
+                <span class="c1">A domicilio</span>
                 <c:choose>
                     <c:when test="${compra.despacho}">
-                        <span>Si</span>
+                        <span class="c2">Si</span>
                     </c:when>
                     <c:otherwise>
-                        <span>No</span>
+                        <span class="c2">No</span>
                     </c:otherwise>
                 </c:choose>
             </div>
             <div class="form-field">
-                <span>Total</span>
-                <span>${compra.total}</span>
+                <span class="c1">Total</span>
+                <span class="c2">&#36;${compra.total}</span>
             </div>
             <div class="form-field">
-                <span><a href="/generarPedido">Volver</a></span>
-                <button type="submit" >Generar Pedido</button>
+                <span class="c1"><a href="/generarPedido">Volver</a></span>
+                <form class="c2" action="/comprar" method="POST">
+                    <button type="submit">Generar Pedido</button>
+                </form>
             </div>
         </fieldset>
         <span><a href="/index">Ir al Menú</a></span>

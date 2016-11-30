@@ -27,7 +27,8 @@
             <form action="/generarPedido" method="POST">
                 <div class="form-field">
                     <label for="plato">Plato</label>
-                    <select name="plato">
+                    <select name="plato" required="">
+                        <option value=""></option>
                         <c:forEach var="plato" items="${platos}">
                             <option value="${plato.id}">${plato.nombrePlato} - ${plato.precioPlato}</option>
                         </c:forEach>
@@ -50,6 +51,7 @@
                 </div>
             </form>
         </fieldset>
+        <span style="color:${color}">${mensaje}</span>
     </body>
 </html>
 

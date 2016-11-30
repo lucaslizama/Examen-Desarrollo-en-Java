@@ -3,13 +3,15 @@
     Created on : Nov 29, 2016, 9:48:15 PM
     Author     : Pancho
 --%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/lista.css"/>
-        <title>JSP Page</title>
+        <title>Pedidos</title>
     </head>
     <body>
         <c:if test="${usuario != null}">
@@ -35,11 +37,11 @@
                     <c:forEach var="pedido" items="${listaPedido}">
                         <tr>
                             <td>${pedido.id}</td>
-                            <td>${pedido.idPlato.nombrePlato}</td>
-                            <td>${pedido.idBebida.nombreBebida}</td>
-                            <td>${pedido.idCliente.direccionCliente}</td>
-                            <td>${pedido.idCliente.telefono}</td>
-                            <td>${pedido.idComuna.nombreComuna}</td>
+                            <td>${pedido.plato.nombrePlato}</td>
+                            <td>${pedido.bebida.nombreBebida}</td>
+                            <td>${pedido.cliente.direccionCliente}</td>
+                            <td>${pedido.cliente.telefono}</td>
+                            <td>${pedido.cliente.comuna.nombreComuna}</td>
                             <td><fmt:formatDate pattern="dd/MM/yyyy/hh/mm" value="${pedido.fechaHora}"/></td>
                             <td>&#36;${pedido.total}</td>            
                         </tr>

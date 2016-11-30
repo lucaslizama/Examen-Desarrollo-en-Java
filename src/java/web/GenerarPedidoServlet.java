@@ -5,10 +5,16 @@
  */
 package web;
 
+import db.Bebida;
+import db.Cliente;
+import db.Pedido;
+import db.Plato;
 import ejb.BebidaFacade;
 import ejb.PlatoFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collections;
+import java.util.Date;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -66,7 +72,35 @@ public class GenerarPedidoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        for(String nombre: Collections.list(request.getParameterNames())){
+            if(request.getParameter(nombre).isEmpty()) {
+                forwardError("No puede haber campos vacios!", request, response);
+                return;
+            }
+        }
         
+        String plato = request.getParameter("plato");
+        String bebida = request.getParameter("bebida");
+        Boolean domicilio = request.getParameter("domicilio") != null;
+        Plato platoEntidad = pf.find(Integer.parseInt(plato));
+        Bebida bebidaEntidad = bf.find(Integer.parseInt(bebida));
+        
+        Pedido pedido = new Pedido();
+        pedido.setBebida(bebidaEntidad);
+        pedido.setPlato(platoEntidad);
+        pedido.setDespacho(domicilio);
+        pedido.setFechaHora(new Date());
+        pedido.setCliente((Cliente)request.getSession(false).getAttribute("usuario"));
+        pedido.setTotal(platoEntidad.getPrecioPlato() + bebidaEntidad.getPrecioBebida());
+        
+        request.getSession(false).setAttribute("compra", pedido);
+        request.getRequestDispatcher("confirmarPedido.jsp").forward(request, response);
+    }
+    
+    private void forwardError(String mensaje, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("mensaje", mensaje);
+        request.setAttribute("color", "red");
+        request.getRequestDispatcher("generarPedido.jsp").forward(request, response);
     }
 
     /**
