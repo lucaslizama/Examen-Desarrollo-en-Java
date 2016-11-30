@@ -3,10 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/Documents/Semestre%206/Desarrollo%20en%20Java/Examen-Desarrollo-en-Java/web/index.jsp</file>
-            <file>file:/F:/Documents/Semestre%206/Desarrollo%20en%20Java/Examen-Desarrollo-en-Java/src/java/web/RegistroServlet.java</file>
-            <file>file:/F:/Documents/Semestre%206/Desarrollo%20en%20Java/Examen-Desarrollo-en-Java/src/java/web/InicioServlet.java</file>
+            <file>file:/F:/Documents/Semestre%206/Desarrollo%20en%20Java/Examen-Desarrollo-en-Java/src/java/web/LoginServlet.java</file>
+            <file>file:/F:/Documents/Semestre%206/Desarrollo%20en%20Java/Examen-Desarrollo-en-Java/web/css/generarPedido.css</file>
+            <file>file:/F:/Documents/Semestre%206/Desarrollo%20en%20Java/Examen-Desarrollo-en-Java/nbproject/build-impl.xml</file>
+            <file>file:/F:/Documents/Semestre%206/Desarrollo%20en%20Java/Examen-Desarrollo-en-Java/src/java/web/GenerarPedidoServlet.java</file>
+            <file>file:/F:/Documents/Semestre%206/Desarrollo%20en%20Java/Examen-Desarrollo-en-Java/web/generarPedido.jsp</file>
+            <file>file:/F:/Documents/Semestre%206/Desarrollo%20en%20Java/Examen-Desarrollo-en-Java/src/java/ejb/ClienteFacade.java</file>
+            <file>file:/F:/Documents/Semestre%206/Desarrollo%20en%20Java/Examen-Desarrollo-en-Java/database/DEJ_Examen_Database.sql</file>
             <file>file:/F:/Documents/Semestre%206/Desarrollo%20en%20Java/Examen-Desarrollo-en-Java/web/registro.jsp</file>
+            <file>file:/F:/Documents/Semestre%206/Desarrollo%20en%20Java/Examen-Desarrollo-en-Java/web/login.jsp</file>
         </group>
     </open-files>
 </project-private>

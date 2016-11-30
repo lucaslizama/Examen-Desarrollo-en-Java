@@ -1,27 +1,30 @@
 fieldset {
-    width: 300px;
+    width: 600px;
 }
 
 label {
     display: inline-block;
-    width: 50px;
+    width: 90px;
 }
 
 input{
     display: inline-block;
-    width: 150px;
 }
 
 button {
-    margin-left: 55px;
+    margin-left: 50px;
 }
 
 span > a {
     display: inline-block;
-    width: 130px;
-    margin-left: 55px;
 }
 
 .form-field {
     margin-top: 5px;
+}
+
+#bienvenida-logout {
+    display: block;
+    margin-left: auto;
+    width: 331px;
 }

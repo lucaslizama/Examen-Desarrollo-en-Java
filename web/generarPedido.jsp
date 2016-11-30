@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-field">
                     <label for="bebida">Bebida</label>
-                    <c:forEach var="bebida" items="bebidas">
+                    <c:forEach var="bebida" items="${bebidas}">
                         <input type="radio" name="bebida" value="${bebida.id}">
                         ${bebida.nombreBebida} ${bebida.precioBebida}
                     </c:forEach>
