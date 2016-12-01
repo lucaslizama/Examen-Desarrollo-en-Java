@@ -216,7 +216,7 @@ public class RegistroServlet extends HttpServlet {
     public void forwardError(String mensaje, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         request.setAttribute("mensaje", mensaje);
         request.setAttribute("color", "red");
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        request.getRequestDispatcher("registro.jsp").forward(request, response);
     }
 
     /**
